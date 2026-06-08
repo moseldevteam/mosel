@@ -143,8 +143,36 @@ export default function ProjectDetail() {
           </section>
         )}
 
-        {/* Project Images */}
-        {project.images && project.images.length > 0 && (
+        {/* Project Images — grouped */}
+        {project.imageGroups && project.imageGroups.length > 0 && (
+          <section className="container-custom px-4 sm:px-6 lg:px-8 pb-16 space-y-12">
+            <h2 className="text-2xl font-semibold">Gallery</h2>
+            {project.imageGroups.map((group) => (
+              <div key={group.label}>
+                <h3 className="text-lg font-medium text-muted-foreground mb-4">{group.label}</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {group.images.map((image, index) => (
+                    <button
+                      key={`${project.id}-${group.label}-${index}`}
+                      type="button"
+                      onClick={() => handleOpenViewer(image, index)}
+                      className="group rounded-2xl overflow-hidden border border-border/50 bg-muted text-left transition hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                    >
+                      <img
+                        src={image}
+                        alt={`${project.title} ${group.label} ${index + 1}`}
+                        className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </section>
+        )}
+
+        {/* Project Images — flat */}
+        {!project.imageGroups && project.images && project.images.length > 0 && (
           <section className="container-custom px-4 sm:px-6 lg:px-8 pb-16">
             <h2 className="text-2xl font-semibold mb-6">Gallery</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

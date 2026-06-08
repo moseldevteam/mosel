@@ -18,8 +18,27 @@ export interface Project {
   videoUrl?: string;
   mobileVideoUrl?: string;
   images?: string[];
+  imageGroups?: { label: string; images: string[] }[];
 }
 
+import unimasPublic1 from "../assets/images/unimasecommerce_public-1.jpg";
+import unimasPublic2 from "../assets/images/unimasecommerce_public-2.jpg";
+import unimasPublic3 from "../assets/images/unimasecommerce_public-3.jpg";
+import unimasPublic4 from "../assets/images/unimasecommerce_public-4.jpg";
+import unimasPublic5 from "../assets/images/unimasecommerce_public-5.jpg";
+import unimasPublic6 from "../assets/images/unimasecommerce_public-6.jpg";
+import unimasPublic7 from "../assets/images/unimasecommerce_public-7.jpg";
+import unimasSeller1 from "../assets/images/unimasecommerce_seller-1.jpg";
+import unimasSeller2 from "../assets/images/unimasecommerce_seller-2.jpg";
+import unimasSeller3 from "../assets/images/unimasecommerce_seller-3.jpg";
+import unimasSeller4 from "../assets/images/unimasecommerce_seller-4.jpg";
+import unimasSeller5 from "../assets/images/unimasecommerce_seller-5.jpg";
+import unimasSeller6 from "../assets/images/unimasecommerce_seller-6.jpg";
+import unimasAdmin1 from "../assets/images/unimasecommerce_admin-1.jpg";
+import unimasAdmin2 from "../assets/images/unimasecommerce_admin-2.jpg";
+import unimasAdmin3 from "../assets/images/unimasecommerce_admin-3.jpg";
+import unimasAdmin4 from "../assets/images/unimasecommerce_admin-4.jpg";
+import unimasAdmin5 from "../assets/images/unimasecommerce_admin-5.jpg";
 import jomTravelThumbnail from "../assets/images/jom-travel-thumbnail.jpg";
 import aromaLabThumbnail from "../assets/images/aroma-lab-thumbnail.jpg";
 import lettuboostThumbnail from "../assets/images/lettuboost-thumbnail.png";
@@ -34,6 +53,34 @@ import textgenesThumbnail from "../assets/images/textGenes-thumbnail.png";
 
 export const projects: Project[] = [
   {
+    id: 'unimas-ecommerce',
+    title: 'UNIMAS E-Commerce Platform',
+    tagline: 'Campus-exclusive multi-seller marketplace for the UNIMAS community — currently in beta',
+    category: 'Web',
+    thumbnail: unimasPublic1,
+    description: 'UNIMAS E-commerce Platform is a purpose-built, campus-exclusive multi-seller marketplace developed in collaboration with UNIMAS Entrepreneurship Centre (UEC). Accessible only through official UNIMAS email domains (@siswa.unimas.my / @unimas.my), the platform empowers verified campus members to buy and sell within a trusted, closed ecosystem. Student sellers and studentpreneurs can set up storefronts, manage product listings with flexible variant types (size, colour, and more), configure delivery fees per campus zone, and track earnings through a dedicated analytics dashboard. Buyers benefit from a seamless multi-seller checkout, flexible payment options, and campus-specific delivery or self-pickup covering UNIMAS Main Campus, East Campus, and Kolej Rafflesia. A robust Admin Panel gives platform moderators full oversight — from seller verification and user management to revenue reporting and product control. Architected and developed end-to-end by Mosel, the platform is currently live and undergoing active beta testing.',
+    problem: '',
+    solution: '',
+    result: '',
+    technologies: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'Radix UI', 'shadcn/ui', 'React Hook Form', 'Zod', 'TanStack React Query', 'Recharts', 'React Router v6', 'PHP 8.2', 'MySQL / MariaDB', 'Apache'],
+    year: 2026,
+    liveUrl: 'https://unimas-ecommerce.goprints.net',
+    imageGroups: [
+      {
+        label: 'Public Storefront',
+        images: [unimasPublic1, unimasPublic2, unimasPublic3, unimasPublic4, unimasPublic5, unimasPublic6, unimasPublic7],
+      },
+      {
+        label: 'Seller Dashboard',
+        images: [unimasSeller1, unimasSeller2, unimasSeller3, unimasSeller4, unimasSeller5, unimasSeller6],
+      },
+      {
+        label: 'Admin Panel',
+        images: [unimasAdmin1, unimasAdmin2, unimasAdmin3, unimasAdmin4, unimasAdmin5],
+      },
+    ],
+  },
+  {
     id: 'jom-travel',
     title: 'Jom Travel & Tour',
     tagline: 'Full-featured travel agency website for a MOTAC-licensed Borneo ground specialist',
@@ -44,7 +91,7 @@ export const projects: Project[] = [
     solution: '',
     result: '',
     technologies: ['React 19', 'TypeScript', 'Tailwind CSS 4', 'Three.js', 'react-globe.gl', 'Lucide React', 'Vite'],
-    year: 2025,
+    year: 2026,
     liveUrl: 'https://jomtravelandtour.com',
     videoUrl: 'https://youtu.be/gwLX9yWby88?si=IFdyzlhi41ylueGm',
     mobileVideoUrl: 'https://youtube.com/shorts/usLT6dbb-_M?si=Hx2BTj206omCOotF',
@@ -60,7 +107,7 @@ export const projects: Project[] = [
     solution: '',
     result: '',
     technologies: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Supabase', 'DeepSeek AI', 'Resend Email', 'jsPDF'],
-    year: 2025,
+    year: 2026,
     liveUrl: 'https://aromalab.my',
     videoUrl: 'https://youtu.be/t_B0BJa-rfo?si=vUCjG7eHWO9qzadl',
     mobileVideoUrl: 'https://youtube.com/shorts/aMaah959sEM?si=CgYUST8aWJ32BDxr',
