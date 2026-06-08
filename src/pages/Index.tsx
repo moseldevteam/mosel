@@ -122,8 +122,8 @@ export default function Index() {
             {[
             {
               name: 'Starter',
-              price: 'RM490',
-              period: '/year',
+              price: 'RM799',
+              prefix: 'Starting From',
               description: 'Perfect for small businesses getting started online.',
               features: [
               '1-page responsive website',
@@ -132,15 +132,15 @@ export default function Index() {
               'WhatsApp button + Google Maps',
               'Social media links',
               'Basic SEO',
-              'Live in 3–5 days'],
+              'Live in 5-10 days'],
 
               cta: 'Select Plan',
               hoverLabel: 'Simple Landing Page'
             },
             {
               name: 'Professional',
-              price: 'RM1490',
-              period: '/year',
+              price: 'RM1799',
+              prefix: 'Starting From',
               description: 'Ideal for growing businesses that need more features.',
               features: [
               'Everything in Starter',
@@ -155,9 +155,8 @@ export default function Index() {
             },
             {
               name: 'Business',
-              price: 'RM2990',
-              period: '/year',
-              prefix: 'From',
+              price: 'RM4999',
+              prefix: 'Starting From',
               description: 'For businesses that need advanced functionality.',
               features: [
               'Everything in Professional',
@@ -184,7 +183,6 @@ export default function Index() {
                 <div className="mb-6">
                   {pkg.prefix && <span className="text-sm text-muted-foreground">{pkg.prefix} </span>}
                   <span className="text-4xl font-bold">{pkg.price}</span>
-                  <span className="text-muted-foreground">{pkg.period}</span>
                 </div>
                 <ul className="space-y-3 mb-8 flex-grow">
                   {pkg.features.map((feature) =>
