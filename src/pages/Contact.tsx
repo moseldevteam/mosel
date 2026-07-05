@@ -211,46 +211,6 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="section-padding bg-muted/30">
-          <div className="container-custom">
-            <SectionHeader
-              label="FAQ"
-              title="Common Questions"
-              description="Answers to questions we often receive."
-            />
-
-            <div className="max-w-3xl mx-auto space-y-6">
-              {[
-                {
-                  q: 'What is your typical project timeline?',
-                  a: 'Project timelines vary based on complexity. A landing page typically takes 1-2 weeks, while a full web application can take 4-8 weeks or more.',
-                },
-                {
-                  q: 'Do you offer ongoing maintenance?',
-                  a: 'Yes, we offer 1 year free maintenance to keep your website updated, secure, and performing optimally after launch.',
-                },
-                {
-                  q: 'What technologies do you work with?',
-                  a: 'We primarily work with React, Next.js, TypeScript, Node.js, and various modern frameworks. We choose the best stack for each project.',
-                },
-                {
-                  q: 'How do we get started?',
-                  a: 'Simply fill out the contact form or reach out via email. We\'ll schedule a call to discuss your project and provide a quote.',
-                },
-              ].map((faq, index) => (
-                <div
-                  key={faq.q}
-                  className="p-6 rounded-2xl bg-card border border-border/50 opacity-0 animate-fade-in-up"
-                  style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
-                >
-                  <h3 className="font-semibold mb-2">{faq.q}</h3>
-                  <p className="text-muted-foreground">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />
