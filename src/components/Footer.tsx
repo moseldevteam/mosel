@@ -7,14 +7,6 @@ const footerLinks = {
   navigation: [
     { href: '/', label: 'Home' },
     { href: '/projects', label: 'Projects' },
-    { href: '/services', label: 'Services' },
-    { href: '/about', label: 'About' },
-    { href: '/achievements', label: 'Achievements' },
-  ],
-  services: [
-    { href: '/services', label: 'Landing Pages' },
-    { href: '/services', label: 'Business Websites' },
-    { href: '/services', label: 'Full-stack Development' },
   ],
 };
 
@@ -31,7 +23,7 @@ export function Footer() {
               <img src={moselLogoFooter} alt="Mosel Logo" className="w-48 h-auto object-contain transition-all duration-300 hover:drop-shadow-[0_0_25px_hsl(var(--primary)/0.3)]" />
             </Link>
             <p className="text-background/70 mb-6 leading-relaxed text-center">
-              Landing pages for more sales
+              We help you get more sales and grow together side by side!
             </p>
           </div>
 
@@ -41,24 +33,6 @@ export function Footer() {
             <ul className="space-y-4">
               {footerLinks.navigation.map((link) => (
                 <li key={link.href + link.label}>
-                  <Link
-                    to={link.href}
-                    className="text-background/70 hover:text-primary transition-colors duration-300 flex items-center gap-1 group"
-                  >
-                    {link.label}
-                    <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="font-semibold mb-6">Services</h4>
-            <ul className="space-y-4">
-              {footerLinks.services.map((link, index) => (
-                <li key={index}>
                   <Link
                     to={link.href}
                     className="text-background/70 hover:text-primary transition-colors duration-300 flex items-center gap-1 group"
