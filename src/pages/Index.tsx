@@ -4,7 +4,58 @@ import { MoselLogo } from '@/components/MoselLogo';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { ProjectCard } from '@/components/ProjectCard';
+import { TeamMember } from '@/components/TeamMember';
 import { featuredProjects } from '@/data/projects';
+
+import zulAbout from "../assets/images/zul-about-bgremoved.png";
+import shahrilAbout from "../assets/images/shahril-about.jpg";
+import hazimAbout from "../assets/images/hazim-about.png";
+
+const team = [
+  {
+    name: 'Zulhilmi Reduan',
+    role: 'Management & Delivery',
+    bio: "Oversees operations and team direction, keeping projects on track from kickoff to delivery.",
+    image: zulAbout,
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/zulhilmi-reduan-015381227/',
+      instagram: 'https://www.instagram.com/zulhilmi_3/',
+      github: 'https://github.com/zul3'
+    }
+  },
+  {
+    name: 'Shahril Aimar',
+    role: 'Marketing & Delivery',
+    bio: "Brings in new clients and stays hands-on through delivery, managing communication and making sure work lands well.",
+    image: shahrilAbout,
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/shahril-aimar-faizal-418120224/',
+      instagram: 'https://www.instagram.com/shahreal0622/',
+      github: 'https://github.com/shahril2206',
+      website: 'https://shahrilaimar-portfolio.vercel.app/'
+    }
+  },
+  {
+    name: 'Hazim Danish',
+    role: 'Delivery (Development)',
+    bio: "Handles full-stack development across projects, building scalable websites and applications from architecture to deployment.",
+    image: hazimAbout,
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/hazim-danish-523341287/',
+      instagram: 'https://www.instagram.com/hazimdanish00123/',
+      github: 'https://github.com/HazimDanish16'
+    }
+  },
+  {
+    name: 'Azrul Naim',
+    role: 'Delivery (Development)',
+    bio: "Contributes to full-stack development, helping build and ship clean, reliable web solutions across projects.",
+    image: 'https://placehold.co/160x160/151B21/6EE7B7?text=AN',
+    socials: {
+      linkedin: 'https://www.linkedin.com/in/azrulnaim/'
+    }
+  }
+];
 
 const mint = '#6EE7B7';
 const navy = '#0E1217';
@@ -283,6 +334,29 @@ export default function Index() {
                 View Pricing & Packages
                 <ArrowRight size={16} />
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Team ───────────────────────────────────────────────── */}
+        <section style={{ backgroundColor: navy }} className="section-padding">
+          <div className="container-custom">
+            <div className="text-center mb-14">
+              <p style={{ color: mint, fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '8px' }}>
+                OUR TEAM
+              </p>
+              <h2 style={{ color: inkLight }} className="text-3xl md:text-4xl font-bold mb-4">
+                Meet the People Behind Mosel
+              </h2>
+              <p style={{ color: muted }} className="text-base max-w-lg mx-auto">
+                A small, focused team passionate about delivering quality digital work.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+              {team.map((member, index) => (
+                <TeamMember key={member.name} {...member} index={index} />
+              ))}
             </div>
           </div>
         </section>

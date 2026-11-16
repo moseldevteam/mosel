@@ -8,14 +8,14 @@ import { SectionHeader } from '@/components/SectionHeader';
 
 
 import zulAbout from "../assets/images/zul-about-bgremoved.png";
-import shahrilAbout from "../assets/images/shahril-about.png";
+import shahrilAbout from "../assets/images/shahril-about.jpg";
 import hazimAbout from "../assets/images/hazim-about.png";
 
 const team = [
 {
   name: 'Zulhilmi Reduan',
-  role: 'Founder & Coordinator',
-  bio: "Defines mosel's direction, identity, and core service offerings. He oversees strategic decisions, ensures operational sustainability, and supports Mosel’s growth through funding, tools, and infrastructure. Focuses on building Mosel as a reliable digital partner for businesses.",
+  role: 'Management & Delivery',
+  bio: "Oversees Mosel's overall operations and team direction. Keeps projects on track from kickoff to handoff, handles key decisions, and ensures the team has what it needs to deliver consistently.",
   image: zulAbout,
   socials: {
     linkedin: 'https://www.linkedin.com/in/zulhilmi-reduan-015381227/',
@@ -24,9 +24,9 @@ const team = [
   }
 },
 {
-  name: 'Shahril',
-  role: 'Project Manager & Developer',
-  bio: "Leads Mosel’s operations end-to-end, from project planning and client communication to development and conversion strategy, ensuring every project stays on timeline, aligns with business goals, and delivers real value. Focuses on bridging the gap between client needs and technical execution.",
+  name: 'Shahril Aimar',
+  role: 'Marketing & Delivery',
+  bio: "Brings in new clients and stays hands-on through delivery. Manages client communication, keeps projects aligned with expectations, and makes sure work gets shipped on time and to spec.",
   image: shahrilAbout,
   socials: {
     linkedin: 'https://www.linkedin.com/in/shahril-aimar-faizal-418120224/',
@@ -37,13 +37,22 @@ const team = [
 },
 {
   name: 'Hazim Danish',
-  role: 'Full-Stack Developer',
-  bio: "The core technical powerhouse, leading full-stack development across projects, handling system architecture, feature implementation, and security considerations. From building scalable websites to ensuring performance and reliability, turning ideas into robust, production-ready solutions.",
+  role: 'Delivery (Development)',
+  bio: "Handles full-stack development across Mosel's projects, from system architecture to feature implementation. Focused on building scalable, production-ready websites and applications that perform reliably in the real world.",
   image: hazimAbout,
   socials: {
     linkedin: 'https://www.linkedin.com/in/hazim-danish-523341287/',
     instagram: 'https://www.instagram.com/hazimdanish00123/',
     github: 'https://github.com/HazimDanish16'
+  }
+},
+{
+  name: 'Azrul Naim',
+  role: 'Delivery (Development)',
+  bio: "Contributes to full-stack development across Mosel's projects, helping build and ship clean, reliable web solutions from frontend to backend.",
+  image: 'https://placehold.co/160x160/151B21/6EE7B7?text=AN',
+  socials: {
+    linkedin: 'https://www.linkedin.com/in/azrulnaim/'
   }
 }];
 
@@ -149,7 +158,7 @@ export default function About() {
               description="A talented group of individuals passionate about creating exceptional digital experiences." />
 
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
               {team.map((member, index) =>
               <TeamMember key={member.name} {...member} index={index} />
               )}
@@ -164,7 +173,7 @@ export default function About() {
               Thinking About Your Next Landing Page?
             </h2>
             <p className="text-background/70 text-lg max-w-xl mx-auto mb-8">
-              Let’s see if Mosel is the right fit to help you generate more leads and enquiries.
+              Let's see if Mosel is the right fit to help you generate more leads and enquiries.
             </p>
             <Button asChild variant="hero" size="lg">
               <Link to="/contact">
