@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import moselLogo from '@/assets/images/mosel-nav-logo.png';
+import { MoselLogo } from '@/components/MoselLogo';
 
-const emerald = '#2C6E49';
-const sand = '#F5F0E4';
-const inkBlack = '#1A1A1A';
-const mutedWarm = '#7A7060';
+const mint = '#6EE7B7';
+const navy = '#0E1217';
+const surface = '#151B21';
+const muted = '#94A2AC';
+const border = '#26303A';
+const inkLight = '#ECF1F3';
 
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/projects', label: 'Projects' },
+  { href: '/services', label: 'Services' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -27,14 +30,14 @@ export function Navbar() {
       position: 'fixed',
       top: 0, left: 0, right: 0,
       zIndex: 50,
-      backgroundColor: `${sand}e6`,
+      backgroundColor: `${navy}e6`,
       backdropFilter: 'blur(12px)',
-      borderBottom: `1px solid ${inkBlack}18`,
+      borderBottom: `1px solid ${border}`,
     }}>
       <div className="container-custom section-padding py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 group">
-            <img src={moselLogo} alt="Mosel Logo" className="h-8 md:h-10 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <MoselLogo fontSize="1.35rem" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -46,15 +49,15 @@ export function Navbar() {
                   key={link.href}
                   to={link.href}
                   style={{
-                    color: isActive ? emerald : mutedWarm,
+                    color: isActive ? mint : muted,
                     fontSize: '0.875rem',
                     fontWeight: 500,
                     textDecoration: 'none',
                     position: 'relative',
                     transition: 'color 0.2s',
                   }}
-                  onMouseEnter={e => { if (!isActive) e.currentTarget.style.color = inkBlack; }}
-                  onMouseLeave={e => { if (!isActive) e.currentTarget.style.color = mutedWarm; }}
+                  onMouseEnter={e => { if (!isActive) e.currentTarget.style.color = inkLight; }}
+                  onMouseLeave={e => { if (!isActive) e.currentTarget.style.color = muted; }}
                 >
                   {link.label}
                   {isActive && (
@@ -64,7 +67,7 @@ export function Navbar() {
                       left: 0,
                       right: 0,
                       height: '2px',
-                      backgroundColor: emerald,
+                      backgroundColor: mint,
                       borderRadius: '999px',
                     }} />
                   )}
@@ -81,16 +84,16 @@ export function Navbar() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 padding: '10px 22px',
-                backgroundColor: emerald,
-                color: sand,
+                backgroundColor: mint,
+                color: navy,
                 borderRadius: '10px',
-                fontWeight: 600,
+                fontWeight: 700,
                 fontSize: '0.875rem',
                 textDecoration: 'none',
                 transition: 'opacity 0.2s',
               }}
-              onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
-              onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+              onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
+              onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
             >
               Get Started
             </Link>
@@ -102,10 +105,10 @@ export function Navbar() {
               alignItems: 'center',
               justifyContent: 'center',
               borderRadius: '10px',
-              border: `1px solid ${inkBlack}30`,
-              backgroundColor: sand,
+              border: `1px solid ${border}`,
+              backgroundColor: surface,
               padding: '10px',
-              color: inkBlack,
+              color: inkLight,
             }}
             className="inline-flex md:hidden"
             onClick={() => setIsOpen(!isOpen)}
@@ -120,10 +123,10 @@ export function Navbar() {
         {isOpen && (
           <div className="pt-4 md:hidden animate-fade-in">
             <div style={{
-              borderRadius: '24px',
-              border: `1px solid ${inkBlack}18`,
-              backgroundColor: sand,
-              boxShadow: '0 20px 40px rgba(0,0,0,0.08)',
+              borderRadius: '20px',
+              border: `1px solid ${border}`,
+              backgroundColor: surface,
+              boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
               overflow: 'hidden',
             }}>
               <div>
@@ -138,11 +141,11 @@ export function Navbar() {
                         display: 'block',
                         padding: '20px',
                         textAlign: 'center',
-                        fontSize: '1.25rem',
+                        fontSize: '1.1rem',
                         fontWeight: 500,
-                        color: isActive ? emerald : inkBlack,
+                        color: isActive ? mint : inkLight,
                         textDecoration: 'none',
-                        borderBottom: i < navLinks.length - 1 ? `1px solid ${inkBlack}12` : 'none',
+                        borderBottom: i < navLinks.length - 1 ? `1px solid ${border}` : 'none',
                         transition: 'color 0.2s',
                       }}
                     >
@@ -159,16 +162,16 @@ export function Navbar() {
                     display: 'flex',
                     justifyContent: 'center',
                     padding: '14px',
-                    backgroundColor: emerald,
-                    color: sand,
+                    backgroundColor: mint,
+                    color: navy,
                     borderRadius: '999px',
-                    fontWeight: 600,
+                    fontWeight: 700,
                     fontSize: '1rem',
                     textDecoration: 'none',
                     transition: 'opacity 0.2s',
                   }}
-                  onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
-                  onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+                  onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
+                  onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
                 >
                   Get Started
                 </Link>

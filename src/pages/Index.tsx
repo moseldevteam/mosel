@@ -1,129 +1,325 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-import moselHeroLogo from '@/assets/images/mosel-hero-logo.png';
+import { ArrowRight, Code2, ShoppingCart, Palette, Bot } from 'lucide-react';
+import { MoselLogo } from '@/components/MoselLogo';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import { ProjectCard } from '@/components/ProjectCard';
+import { featuredProjects } from '@/data/projects';
 
-const emerald = '#2C6E49';
-const sand = '#F5F0E4';
-const inkBlack = '#1A1A1A';
-const mutedWarm = '#7A7060';
+const mint = '#6EE7B7';
+const navy = '#0E1217';
+const surface = '#151B21';
+const border = '#26303A';
+const muted = '#94A2AC';
+const inkLight = '#ECF1F3';
+
+const offerings = [
+  {
+    icon: Code2,
+    title: 'Web Development',
+    description: 'Custom responsive websites and web apps — from landing pages to full-stack platforms — built for speed and clean UX.',
+  },
+  {
+    icon: ShoppingCart,
+    title: 'E-Commerce',
+    description: 'Multi-seller marketplaces, online stores, and product catalogues with smart admin dashboards and seamless checkout.',
+  },
+  {
+    icon: Palette,
+    title: 'UI/UX Design',
+    description: 'Figma prototypes and polished design systems that put user experience first — from wireframes to production-ready visuals.',
+  },
+  {
+    icon: Bot,
+    title: 'AI & Automation',
+    description: 'Bilingual AI chatbots, automated email flows, and intelligent tools that keep your business running around the clock.',
+  },
+];
 
 export default function Index() {
   return (
-    <div style={{ backgroundColor: sand, minHeight: '100vh', display: 'flex', flexDirection: 'column', }}>
+    <div style={{ backgroundColor: navy, minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
 
-      <main style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '5rem' }}>
-        <div className="container-custom section-padding text-center">
-          <div className="max-w-3xl mx-auto">
+      <main style={{ flex: 1 }}>
 
-            {/* Subtle emerald glow blob */}
-            <div style={{
-              position: 'absolute',
-              top: '30%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              width: '500px',
-              height: '500px',
-              backgroundColor: emerald,
-              opacity: 0.06,
-              borderRadius: '50%',
-              filter: 'blur(80px)',
-              pointerEvents: 'none',
-            }} />
+        {/* ── Hero ───────────────────────────────────────────────── */}
+        <section style={{
+          position: 'relative',
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden',
+          paddingTop: '5rem',
+        }}>
+          {/* Mint glow */}
+          <div style={{
+            position: 'absolute',
+            top: '40%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '700px',
+            height: '700px',
+            backgroundColor: mint,
+            opacity: 0.05,
+            borderRadius: '50%',
+            filter: 'blur(120px)',
+            pointerEvents: 'none',
+          }} />
 
-            <div className="mb-10 animate-fade-in">
-              <img src={moselHeroLogo} alt="Mosel" className="h-16 md:h-24 lg:h-28 mx-auto" />
+          <div className="container-custom w-full px-4 sm:px-6 lg:px-8 py-16 text-center">
+            <div className="max-w-3xl mx-auto">
+
+              <div className="mb-8 animate-fade-in">
+                <MoselLogo fontSize="4.5rem" className="block" />
+              </div>
+
+              <div className="mb-6 animate-fade-in" style={{ animationDelay: '80ms' }}>
+                <span style={{
+                  display: 'inline-block',
+                  padding: '6px 16px',
+                  backgroundColor: `${mint}18`,
+                  color: mint,
+                  borderRadius: '999px',
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.1em',
+                  border: `1px solid ${mint}30`,
+                }}>
+                  DIGITAL AGENCY · KUCHING, SARAWAK
+                </span>
+              </div>
+
+              <h1
+                style={{ color: inkLight, animationDelay: '130ms' }}
+                className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in leading-tight"
+              >
+                We Build Digital Products<br />
+                <span style={{ color: mint }}>That Drive Results.</span>
+              </h1>
+
+              <p
+                style={{ color: muted, animationDelay: '180ms' }}
+                className="text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in"
+              >
+                From websites and e-commerce platforms to AI chatbots and custom software — Mosel helps ambitious teams launch and grow online.
+              </p>
+
+              <div
+                className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in"
+                style={{ animationDelay: '230ms' }}
+              >
+                <Link
+                  to="/projects"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '14px 28px',
+                    backgroundColor: mint,
+                    color: navy,
+                    borderRadius: '12px',
+                    fontWeight: 700,
+                    fontSize: '1rem',
+                    textDecoration: 'none',
+                    transition: 'opacity 0.2s',
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
+                  onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
+                >
+                  See Our Work
+                  <ArrowRight size={18} />
+                </Link>
+
+                <Link
+                  to="/contact"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '14px 28px',
+                    backgroundColor: 'transparent',
+                    color: inkLight,
+                    border: `1px solid ${border}`,
+                    borderRadius: '12px',
+                    fontWeight: 600,
+                    fontSize: '1rem',
+                    textDecoration: 'none',
+                    transition: 'border-color 0.2s, color 0.2s',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.borderColor = mint;
+                    e.currentTarget.style.color = mint;
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.borderColor = border;
+                    e.currentTarget.style.color = inkLight;
+                  }}
+                >
+                  Get In Touch
+                </Link>
+              </div>
+
             </div>
+          </div>
+        </section>
 
-            <h1
-              style={{ color: inkBlack }}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in"
-            >
-              We're Rebranding.
-            </h1>
-
-            <p
-              style={{ color: mutedWarm }}
-              className="text-xl md:text-2xl mb-4 animate-fade-in"
-            >
-              Something much bigger is coming.
-            </p>
-
-            <p
-              style={{ color: mutedWarm }}
-              className="text-base md:text-lg max-w-xl mx-auto mb-12 leading-relaxed animate-fade-in"
-            >
-              Mosel is undergoing a{' '}
-              <span style={{ color: emerald, fontWeight: 700 }}>HUGE REBRANDING</span>
-              {' '}— new look, new vision, new energy. Stay tuned.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
+        {/* ── Featured Work ──────────────────────────────────────── */}
+        <section style={{ backgroundColor: surface }} className="section-padding">
+          <div className="container-custom">
+            <div className="flex items-end justify-between mb-12 flex-wrap gap-4">
+              <div>
+                <p style={{ color: mint, fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '8px' }}>
+                  SELECTED WORK
+                </p>
+                <h2 style={{ color: inkLight }} className="text-3xl md:text-4xl font-bold">
+                  What We've Built
+                </h2>
+              </div>
               <Link
                 to="/projects"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '8px',
-                  padding: '14px 28px',
-                  backgroundColor: emerald,
-                  color: sand,
-                  borderRadius: '12px',
-                  fontWeight: 600,
-                  fontSize: '1rem',
+                  gap: '6px',
+                  color: mint,
+                  fontWeight: 500,
+                  fontSize: '0.9rem',
                   textDecoration: 'none',
                   transition: 'opacity 0.2s',
                 }}
-                onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
+                onMouseEnter={e => (e.currentTarget.style.opacity = '0.7')}
                 onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
               >
-                See Our Work
-                <ArrowRight size={18} />
+                View All Projects
+                <ArrowRight size={16} />
               </Link>
+            </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {featuredProjects.map((project, index) => (
+                <ProjectCard key={project.id} project={project} index={index} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Our Offerings ──────────────────────────────────────── */}
+        <section style={{ backgroundColor: navy }} className="section-padding">
+          <div className="container-custom">
+            <div className="text-center mb-14">
+              <p style={{ color: mint, fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em', marginBottom: '8px' }}>
+                OUR OFFERINGS
+              </p>
+              <h2 style={{ color: inkLight }} className="text-3xl md:text-4xl font-bold mb-4">
+                What We Do
+              </h2>
+              <p style={{ color: muted }} className="text-base max-w-lg mx-auto">
+                End-to-end digital solutions built to help your business grow.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {offerings.map((item, index) => (
+                <div
+                  key={item.title}
+                  className="p-6 rounded-2xl opacity-0 animate-fade-in-up"
+                  style={{
+                    backgroundColor: surface,
+                    border: `1px solid ${border}`,
+                    animationDelay: `${index * 100}ms`,
+                    animationFillMode: 'forwards',
+                    transition: 'border-color 0.2s',
+                    cursor: 'default',
+                  }}
+                  onMouseEnter={e => ((e.currentTarget as HTMLDivElement).style.borderColor = `${mint}55`)}
+                  onMouseLeave={e => ((e.currentTarget as HTMLDivElement).style.borderColor = border)}
+                >
+                  <div style={{
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '12px',
+                    backgroundColor: `${mint}18`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '16px',
+                  }}>
+                    <item.icon color={mint} size={22} />
+                  </div>
+                  <h3 style={{ color: inkLight }} className="text-lg font-semibold mb-2">{item.title}</h3>
+                  <p style={{ color: muted }} className="text-sm leading-relaxed">{item.description}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-10">
               <Link
-                to="/contact"
+                to="/services"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  padding: '14px 28px',
+                  padding: '12px 24px',
                   backgroundColor: 'transparent',
-                  color: inkBlack,
-                  border: `2px solid ${inkBlack}`,
-                  borderRadius: '12px',
+                  color: mint,
+                  border: `1px solid ${mint}50`,
+                  borderRadius: '10px',
                   fontWeight: 600,
-                  fontSize: '1rem',
+                  fontSize: '0.9rem',
                   textDecoration: 'none',
-                  transition: 'background-color 0.2s, color 0.2s',
+                  transition: 'background-color 0.2s, border-color 0.2s',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.backgroundColor = inkBlack;
-                  e.currentTarget.style.color = sand;
+                  e.currentTarget.style.backgroundColor = `${mint}12`;
+                  e.currentTarget.style.borderColor = mint;
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = inkBlack;
+                  e.currentTarget.style.borderColor = `${mint}50`;
                 }}
               >
-                Get in Touch
+                View Pricing & Packages
+                <ArrowRight size={16} />
               </Link>
             </div>
-
-            {/* Color palette hint */}
-            <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'center', gap: '12px', alignItems: 'center' }}>
-              <div style={{ width: '28px', height: '28px', borderRadius: '50%', backgroundColor: emerald }} title="Artisan Emerald Green" />
-              <div style={{ width: '28px', height: '28px', borderRadius: '50%', backgroundColor: sand, border: `2px solid ${mutedWarm}` }} title="Sand" />
-              <div style={{ width: '28px', height: '28px', borderRadius: '50%', backgroundColor: inkBlack }} title="Ink Black" />
-            </div>
-            <p style={{ color: mutedWarm, fontSize: '0.75rem', marginTop: '8px', letterSpacing: '0.05em' }}>
-              A SNEAK PEEK OF WHAT'S COMING
-            </p>
-
           </div>
-        </div>
+        </section>
+
+        {/* ── CTA ────────────────────────────────────────────────── */}
+        <section style={{ backgroundColor: surface, borderTop: `1px solid ${border}` }} className="section-padding">
+          <div className="container-custom text-center">
+            <h2 style={{ color: inkLight }} className="text-3xl md:text-4xl font-bold mb-4">
+              Ready to Start Your Project?
+            </h2>
+            <p style={{ color: muted }} className="text-lg max-w-xl mx-auto mb-8">
+              Let's talk about what you need. We'll scope it, design it, and build it — together.
+            </p>
+            <Link
+              to="/contact"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '16px 32px',
+                backgroundColor: mint,
+                color: navy,
+                borderRadius: '12px',
+                fontWeight: 700,
+                fontSize: '1rem',
+                textDecoration: 'none',
+                transition: 'opacity 0.2s',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
+              onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
+            >
+              Start a Project
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        </section>
+
       </main>
 
       <Footer />
