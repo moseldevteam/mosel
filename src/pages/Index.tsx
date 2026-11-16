@@ -26,7 +26,7 @@ const team = [
   {
     name: 'Shahril Aimar',
     role: 'Marketing & Delivery',
-    bio: "Brings in new clients and stays hands-on through delivery, managing communication and making sure work lands well.",
+    bio: "Brings in new clients, managing communication and making sure work lands well.",
     image: shahrilAbout,
     socials: {
       linkedin: 'https://www.linkedin.com/in/shahril-aimar-faizal-418120224/',
